@@ -1,0 +1,177 @@
+/*==========全局样式开始==========*/
+html{-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:none;_filter:expression(document.execCommand("BackgroundImageCache",false,true));}
+body{font-size:12px;color:#4d4d4d;margin:0px;padding:0px;font-family: Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;}
+body,html{
+	max-width: 1920px;
+	min-width: 1200px;
+	margin: auto;
+}
+select{vertical-align:middle;height:21px;}
+label{vertical-align:middle;}
+h1,h2,h3,h4,h5,h6{padding:0px;margin:0px;}
+ul,li,ol,dl,dt,dd{list-style-type:none;margin:0px;padding:0px;}
+form,p{margin:0px;padding:0px;}
+img{border:0px;}
+a{font-family:"微软雅黑","Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;color:#4d4d4d;text-decoration:none;}
+a:hover{color:#2eb7c7;text-decoration:none;}
+.clear{clear:both;}
+.fl{float: left;}
+.fr{float: right;}
+.ov{overflow: hidden;}
+.end{
+	margin-right: 0 !important;
+}
+/*全局样式结束*/
+
+.wordLink{
+	line-height: 40px;
+}
+.wordLink a{
+	display: inline-block;
+	margin-right: 10px;
+}
+.content{
+	width: 1200px;
+	margin: auto;
+}
+.header{
+	width: 100%;
+	height: 80px;
+	background: rgba(246,246,246,1);
+	/*position: fixed;*/
+	z-index: 10;
+	top:0;
+}
+.header img{
+	height: 80px;
+}
+.header h3 span{
+	color: #f5d800;
+	font-size: 14px;
+	padding-left: 30px;
+	font-weight: normal;
+}
+.header h3{
+	color: #f5251b;
+	margin-top: 24px;
+    font-size: 22px;
+}
+.banner{
+	position: relative;
+	height: 700px;
+	width: 100%;
+    overflow: hidden;
+}
+.banner>div{
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	margin-left: -960px;
+}
+.banner ul li{
+	background: #f1f1f1;
+	position: absolute;
+	width: 100%;
+	top:0;
+	left: 0;
+}
+.banner ul li img{
+	width: 100%;
+}
+.banner ol{
+	position: absolute;
+	overflow: hidden;
+	width: 208px;
+	left: 50%;
+	margin-left: -104px;
+	bottom: 40px;
+}
+.banner ol li{
+	cursor: pointer;
+	float: left;
+	width: 12px;
+	height: 12px;
+	border-radius: 8px;
+	border:2px solid #bcbcbc;
+	margin: 0 16px ;
+}
+.banner ol .active{
+	background: #f00;
+	border-color: #f00;
+}
+.three .pro-top{
+	margin-bottom: 30px;
+}
+.three{
+	padding: 40px 0;
+}
+.three h3{
+	font-size: 20px;
+	color:#000;
+}
+.three ul{
+	overflow: hidden;
+	height: 460px;
+}
+.three ul li{
+	float: left;
+	margin-right: 126px;
+	box-shadow: 0 0 20px #ccc;
+}
+.about .contact,.about .about-con{
+	padding-top: 20px;
+	background: #f9f9f9;
+	width: 500px;
+	height: 292px;
+}
+.about .title{
+	text-align: left;
+	text-indent: 30px;
+}
+.about .contact h4,.about .about-con h4{
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.about .contact h5,.about .about-con h5{
+	font-weight: normal;
+	margin-bottom: 25px;
+	letter-spacing: 2px;
+}
+.about-con p{
+	padding:0 30px;
+	line-height: 26px;
+}
+.about .contact .tail{
+	padding-left: 40px;
+}
+.about .contact  li{
+	padding-left: 40px;
+	line-height: 36px;
+	background: url(../images/contact-icon.png) 0 0 no-repeat;
+}
+.contact li.l1{
+	background-position: 0 3px;
+}
+.contact li.l2{
+	background-position: 0 -30px;
+}
+.contact li.l3{
+	background-position: 0 -64px;
+}
+.contact li.l4{
+	background-position: 0 -98px;
+}
+.contact li.l5{
+	background-position: 0 -130px;
+}
+.map{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+#allmap{
+	height: 350px;
+}
+.footer{
+	height: 100px;
+	background: #555;
+}

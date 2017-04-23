@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>智能手表-专注智能穿戴行业实力工厂</title>
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+ 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aeidPxZFonCrh2BoqG0OGVgkTutRftf5"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="content ov">
+			<div class="fl ov">
+				<img src="images/logo.png" alt="永盛佳-智能手表logo" class="fl">
+				<div class="fl">
+					<h3>深圳市永盛佳科技有限公司</h3>
+				</div>
+			</div>
+			<div class="fl">
+				<ul class="nav">
+					
+				</ul>
+			</div>
+			<div class="fr">
+				<div class="wordLink">
+					<a href="#">中文</a>
+					<a href="./en">English</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner section">
+		<div>
+			<ul>
+				<li class="active"><img src="images/banner/banner1.jpg" alt="永盛佳-智能手表"></li>
+				<li><img src="images/banner/banner2.jpg" alt="永盛佳-智能手表"></li>
+				<li><img src="images/banner/banner3.jpg" alt="永盛佳-智能手表"></li>
+				<li><img src="images/banner/banner4.jpg" alt="永盛佳-智能手表"></li>
+			</ul>
+		</div>
+		<ol>
+			<li  class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+	
+	<div class="three section">
+		<div class="content">
+			<div class="pro-top">
+				<h3>主推产品</h3>
+			</div>
+			<div class="pro-img">
+				<ul>
+					<li><img src="images/pro/chanpin-1.jpg" alt="永盛佳G15"></li>
+					<li><img src="images/pro/chanpin-2.jpg" alt="永盛佳M2S"></li>
+					<li class="end"><img src="images/pro/chanpin-3.jpg" alt="永盛佳sx101"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="about section ov">
+		<div class="content">
+			<div class="fl about-con">
+				<h4 class="title">关于永盛佳</h4>
+				<h5 class="title">about our company</h5>				
+				<p>深圳市永盛佳科技有限公司是智能手表、智能手环、智能手表配件、注塑加工、模具加工等产品专业生产加工的公司，拥有完整、科学的质量管理体系。深圳市永盛佳科技有限公司的诚信、实力和产品质量获得业界的认可。欢迎各界朋友莅临参观、指导和业务洽谈。</p>
+			</div>
+			<div class="fr contact">
+				<h4 class="title">联系方式</h4>
+				<h5 class="title">please contact with us</h5>
+				<div class="tail">
+					<ul>
+						<li class="l1">电　　话：+86 0755 33196821</li>
+						<li class="l2">移动电话：137 2886 8865</li>
+						<li class="l3">传　　真：+86 0755 33196820</li>
+						<li class="l4">邮　　编：518107</li>
+						<li class="l5">地　　址：中国 广东 深圳市宝安区 沙井街道共和安佳工业园A1栋四楼</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="map section">
+		<div class="content" id="allmap"></div>
+	</div>
+	<div class="footer"></div>
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		function runBanner(){
+			var $point  = $(".banner ol li");
+			var $images = $(".banner ul li");
+			var len     = $images.length;
+			var isAuto  = true;
+			var ind     = 0;
+			setTimeout(function(){
+				var returnFn = arguments.callee;
+				if(isAuto) {
+					ind++;
+					if(ind == len ) ind = 0;
+					run(ind);
+				}
+				setTimeout(returnFn,2000)
+			},1000);
+
+			$point.on("click",function(){
+				isAuto = false;
+				ind = $(this).index();
+				run(ind);
+				setTimeout(function(){
+					isAuto = true;
+				},5000)
+			});
+
+			function run(ind){
+				$point.removeClass("active")
+				$point.eq(ind).addClass("active");
+
+				$images.fadeOut(400)
+				$images.eq(ind).fadeIn(400);
+
+			}
+		}
+		window.onload=function(){
+			runBanner();
+		}
+	</script>
+	<script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("allmap");
+		var point = new BMap.Point(113.807812,22.757730);
+		map.centerAndZoom(point,12);
+		// 创建地址解析器实例
+		var myGeo = new BMap.Geocoder();
+		// 将地址解析结果显示在地图上,并调整地图视野
+		myGeo.getPoint("深圳市宝安区沙井街道共和安佳工业园A1栋四楼", function(point){
+			if (point) {
+				map.centerAndZoom(point, 16);
+				map.addOverlay(new BMap.Marker(point));
+			}else{
+				alert("您选择地址没有解析到结果!");
+			}
+		}, "深圳市");
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	</script>
+</body>
+</html>
